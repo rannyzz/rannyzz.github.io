@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== CORPO ===== */
+body {
+    background-color: #0b0b0b;
+    color: #eaeaea;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    padding: 80px 20px 60px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* ===== FOTO ===== */
+.foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid darkred;
+}
+
+/* ===== LINHA ===== */
+hr {
+    border: none;
+    height: 2px;
+    background: darkred;
+    width: 100%;
+}
+
+/* ===== SEÇÕES ===== */
+section {
+    max-width: 900px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+section h2 {
+    color: darkred;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* ===== PROJETOS ===== */
+.projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #151515;
+    padding: 20px;
+    border-left: 4px solid darkred;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    background-color: #1a1a1a;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== LISTA ===== */
+ul {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #555;
+    font-size: 14px;
+}
+section ul li::marker {
+    color: darkred;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Igor</title>
+</head>
+<body>
+    <header>
+        <img src="foto.jpeg" class="foto">
+        <h1>Igor Morato dos Santos</h1>
+        <p>Estudante • Criador de projetos • Aprendendo desenvolvimento web</p>
+    </header>
+
+    <hr>
+
+    <section>
+        <h2>Sobre mim</h2>
+        <p>
+            Me chamo Igor Morato dos Santos, estou cursando um técnico de TI, gosto de tecnologia como um todo, livros de terror e criar histórias de fantasia.
+        </p>
+    </section>
+
+    <section> 
+        <h2>Projetos</h2>
+
+        <div class="projetos">
+            <div class="card">
+                <h3>Aplicativo em C# e SQL</h3>
+                    <p>
+                        Simula um ambiente de biblioteca com CRUD, área de login funcional,
+                        tela splash e outros recursos.
+                    </p>
+            </div>
+            <div class="card">
+                <h3>Projeto HTML</h3>
+                <p>
+                    Página criada para estudo de estrutura e estilização.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Inglês básico.</li>
+            <li>Facilidade de aprendizado / entendimento.</li>
+            <li>Conhecimentos em Informática(Word, Excel, etc). </li>
+            <li>Facilidade em seguir regras e instruções.</li>
+            <li>Trabalhar bem sozinho.</li>
+            <li>Pontual.</li>
+            <li>Criativo.</li>
+            <li>C# Básico.</li>
+            <li>HTML Básico.</li>
+            <li>CSS Básico.</li>
+            <li>Observador.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Hobbies</h2>
+        <ul>
+            <li>Jogar jogos eletrônicos.</li>
+            <li>Ler livros de fantasia principalmente. </li>
+            <li>Colecionar algumas coisas.</li>
+            <li>Ouvir música.</li>
+            <li>Jiu-Jitsu.</li>
+            
+        </ul>
+    </section>
+    <section>
+        <h2>Contato</h2>
+            <ul>
+                <li>Email: igormorato137@gmail.com</li>
+                <li>Instagram: @morathzz</li>
+                <li>GitHub: rannyzz</li>
+            </ul>
+    </section>
+     <footer>
+        © 2026 — Portfólio pessoal
+    </footer>
+</body>
+</html>
