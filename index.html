@@ -1,195 +1,494 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Igor Morato</title>
 
-/* ===== CORPO ===== */
-body {
-    background-color: #0b0b0b;
-    color: #eaeaea;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-}
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-/* ===== HEADER ===== */
-header {
-    text-align: center;
-    padding: 80px 20px 60px;
-}
+    :root{
+      --bg:#25262d;
+      --bg-2:#2d2f36;
+      --card:#343740;
+      --line:#b39052;
+      --text:#f2f2f2;
+      --text-2:#bdbdbd;
+      --accent:#d4ab63;
+      --accent-hover:#e6bf7c;
+    }
 
-header h1 {
-    font-size: 38px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-}
+    html{
+      scroll-behavior:smooth;
+    }
 
-header p {
-    color: #aaa;
-    margin-top: 10px;
-}
+    body{
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(212,171,99,0.08), transparent 25%),
+        linear-gradient(135deg, #23242b, #1f2128 60%, #25262d);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-/* ===== FOTO ===== */
-.foto {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid darkred;
-}
+    a{
+      text-decoration:none;
+      color: var(--accent);
+      transition: .3s;
+    }
 
-/* ===== LINHA ===== */
-hr {
-    border: none;
-    height: 2px;
-    background: darkred;
-    width: 100%;
-}
+    a:hover{
+      color: var(--accent-hover);
+    }
 
-/* ===== SEÇÕES ===== */
-section {
-    max-width: 900px;
-    margin: 70px auto;
-    padding: 0 20px;
-}
+    .container{
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
 
-section h2 {
-    color: darkred;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
+    header{
+      min-height: 88vh;
+      display:flex;
+      align-items:center;
+      border-left: 1px solid rgba(179, 144, 82, 0.4);
+      border-right: 1px solid rgba(179, 144, 82, 0.4);
+      position: relative;
+    }
 
-/* ===== PROJETOS ===== */
-.projetos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 30px 0;
+      margin-bottom: 40px;
+    }
 
-.card {
-    background-color: #151515;
-    padding: 20px;
-    border-left: 4px solid darkred;
-    transition: 0.3s;
-}
+    .logo{
+      font-size: 30px;
+      font-weight:bold;
+      color: var(--accent);
+    }
 
-.card:hover {
-    transform: translateY(-6px);
-    background-color: #1a1a1a;
-}
+    .menu{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
 
-/* ===== LINKS ===== */
-a {
-    color: #ff4d4d;
-    text-decoration: none;
-    font-weight: bold;
-}
+    .menu a{
+      color: var(--text-2);
+      font-size:14px;
+    }
 
-a:hover {
-    text-decoration: underline;
-}
+    .menu a:hover{
+      color: var(--accent);
+    }
 
-/* ===== LISTA ===== */
-ul {
-    margin-left: 20px;
-}
+    .hero{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding-bottom: 80px;
+    }
 
-li {
-    margin-bottom: 8px;
-}
+    .hero-text{
+      max-width: 760px;
+      margin: 0 auto;
+    }
 
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: #555;
-    font-size: 14px;
-}
-section ul li::marker {
-    color: darkred;
-}
-    </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Igor</title>
+    .hero-text small{
+      color: var(--accent);
+      letter-spacing:3px;
+      text-transform:uppercase;
+      display:block;
+      margin-bottom:18px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .hero-text h1{
+      font-size: 64px;
+      line-height:1.05;
+      margin-bottom:18px;
+      color: #ffffff;
+    }
+
+    .hero-text h1 span{
+      color: var(--accent);
+    }
+
+    .hero-text p{
+      max-width: 680px;
+      color: var(--text-2);
+      margin: 0 auto;
+      font-size: 18px;
+    }
+
+    section{
+      padding: 90px 0;
+      border-top: 1px solid rgba(179, 144, 82, 0.15);
+    }
+
+    .section-title{
+      font-size: 34px;
+      margin-bottom: 35px;
+      position: relative;
+      display:inline-block;
+    }
+
+    .section-title::after{
+      content:"";
+      display:block;
+      width: 70px;
+      height: 2px;
+      background: var(--accent);
+      margin-top: 8px;
+    }
+
+    .about p{
+      max-width: 850px;
+      color: var(--text-2);
+      font-size: 16px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(179, 144, 82, 0.15);
+      border-radius: 16px;
+      padding: 26px;
+    }
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap:18px;
+      margin-top: 10px;
+    }
+
+    .skill-card{
+      background: linear-gradient(180deg, #353840, #2f323a);
+      border-radius: 12px;
+      padding: 25px 20px;
+      text-align:center;
+      border: 1px solid transparent;
+      transition: .3s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .skill-card:hover{
+      border-color: rgba(212, 171, 99, 0.45);
+      transform: translateY(-4px);
+    }
+
+    .skill-icon{
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    .skill-card h3{
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .skill-card p{
+      font-size: 14px;
+      color: var(--text-2);
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .project-card{
+      background: linear-gradient(180deg, #2f3139, #2a2c34);
+      border: 1px solid rgba(179, 144, 82, 0.15);
+      border-radius: 14px;
+      padding: 24px;
+      transition:.3s;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.16);
+    }
+
+    .project-card:hover{
+      transform: translateY(-5px);
+      border-color: rgba(212, 171, 99, 0.45);
+    }
+
+    .project-card h3{
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .project-card p{
+      color: var(--text-2);
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .tech{
+      color: var(--accent) !important;
+      font-size: 14px !important;
+      margin-bottom: 18px !important;
+    }
+
+    .project-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+    }
+
+    .project-links a{
+      font-weight:bold;
+      font-size:14px;
+    }
+
+    .contact-box{
+      background: linear-gradient(180deg, #2f3139, #2a2c34);
+      border: 1px solid rgba(179, 144, 82, 0.2);
+      border-radius: 18px;
+      padding: 30px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .contact-item{
+      background: var(--card);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.03);
+      transition: .3s;
+    }
+
+    .contact-item:hover{
+      transform: translateY(-4px);
+      border-color: rgba(212,171,99,0.28);
+    }
+
+    .contact-item h3{
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+
+    .contact-item a{
+      color: var(--text-2);
+      font-size: 15px;
+      word-break: break-word;
+    }
+
+    .contact-item a:hover{
+      color: var(--accent-hover);
+    }
+
+    footer{
+      text-align:center;
+      padding: 30px 20px 50px;
+      color: var(--text-2);
+      border-top: 1px solid rgba(179, 144, 82, 0.15);
+    }
+
+    @media (max-width: 900px){
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-text h1{
+        font-size:46px;
+      }
+
+      .contact-box{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px){
+      .hero-text h1{
+        font-size:34px;
+      }
+
+      .hero-text p{
+        font-size:16px;
+      }
+
+      .section-title{
+        font-size:28px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Igor Morato dos Santos</h1>
-        <p>Estudante • Criador de projetos • Aprendendo desenvolvimento web</p>
-    </header>
 
-    <hr>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">IM</div>
 
-    <section>
-        <h2>Sobre mim</h2>
-        <p>
-            Me chamo Igor Morato dos Santos, estou cursando um técnico de TI, gosto de tecnologia como um todo, livros de terror e criar histórias de fantasia.
-        </p>
-    </section>
+        <ul class="menu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
 
-    <section> 
-        <h2>Projetos</h2>
-
-        <div class="projetos">
-            <div class="card">
-                <h3>Aplicativo em C# e SQL</h3>
-                    <p>
-                        Um projeto desenvolvido para controle de uma biblioteca, envolvendo SQL para edição dos dados, cadastro com nome de usuário e senha funcional e tela de carregamento funcional.
-                    </p>
-            </div>
-            <div class="card">
-                <h3>Projeto HTML</h3>
-                <p>
-                    Página com funcionamento de login de criação e entrada de usuário com email e senha funcional, conectados a um banco de dados e hospedado no banco de dados da Google(Google Firebase).
-                </p>
-            </div>
+      <div class="hero">
+        <div class="hero-text">
+          <small>Portfólio</small>
+          <h1>Olá, eu sou <span>Igor Morato</span></h1>
+          <p>
+            Desenvolvedor web com foco em landing pages e sistemas simples,
+            criando projetos com HTML, CSS, JavaScript, C#, PHP e MySQL.
+          </p>
         </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="sobre" class="about">
+      <h2 class="section-title">Sobre Mim</h2>
+      <p>
+        Sou estudante de TI e desenvolvedor web com foco na criação de landing pages
+        e sistemas simples. Tenho experiência com HTML, CSS, JavaScript, C# e PHP,
+        desenvolvendo projetos que envolvem interface, lógica de programação e integração
+        com banco de dados.
+      </p>
     </section>
-    <section>
-        <h2>Habilidades</h2>
-        <ul>
-            <li>Inglês básico.</li>
-            <li>Facilidade de aprendizado / entendimento.</li>
-            <li>Conhecimentos em Informática(Word, Excel, etc). </li>
-            <li>Facilidade em seguir regras e instruções.</li>
-            <li>Trabalhar bem sozinho.</li>
-            <li>Pontual.</li>
-            <li>Criativo.</li>
-            <li>C# Básico.</li>
-            <li>HTML Básico.</li>
-            <li>CSS Básico.</li>
-            <li>Observador.</li>
-        </ul>
+
+    <section id="habilidades">
+      <h2 class="section-title">Habilidades</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">⌘</div>
+          <h3>HTML</h3>
+          <p>Estruturação de páginas web</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">✦</div>
+          <h3>CSS</h3>
+          <p>Estilização e responsividade</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">⚙</div>
+          <h3>JavaScript</h3>
+          <p>Interatividade e lógica</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">#</div>
+          <h3>C#</h3>
+          <p>Sistemas desktop e CRUD</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">⌂</div>
+          <h3>PHP</h3>
+          <p>Back-end para web</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">⌗</div>
+          <h3>MySQL</h3>
+          <p>Banco de dados relacional</p>
+        </div>
+      </div>
     </section>
-    <section>
-        <h2>Hobbies</h2>
-        <ul>
-            <li>Jogar jogos eletrônicos.</li>
-            <li>Ler livros de fantasia principalmente. </li>
-            <li>Colecionar algumas coisas.</li>
-            <li>Ouvir música.</li>
-            <li>Jiu-Jitsu.</li>
-            
-        </ul>
+
+    <section id="projetos">
+      <h2 class="section-title">Projetos</h2>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Sistema de Gerenciamento de Biblioteca</h3>
+          <p>
+            Desenvolvimento de um sistema de gerenciamento de biblioteca utilizando C# e MySQL
+            no Visual Studio, com autenticação de usuários, controle de livros e gerenciamento de status.
+          </p>
+          <p class="tech">Tecnologias: C#, MySQL</p>
+          <div class="project-links">
+            <a href="https://github.com/rannyzz/PROJETO_BIBLIOTECA_CERTO" target="_blank">Ver projeto</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Gerador de Senhas</h3>
+          <p>
+            Aplicação web desenvolvida em JavaScript para geração de senhas seguras
+            com opções de personalização, como tamanho e tipos de caracteres.
+          </p>
+          <p class="tech">Tecnologias: HTML, CSS, JavaScript</p>
+          <div class="project-links">
+            <a href="https://github.com/rannyzz/Gerador-de-senhas/tree/main" target="_blank">Ver projeto</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>TaskFlow</h3>
+          <p>
+            Aplicativo de gerenciamento de tarefas desenvolvido em JavaScript,
+            permitindo criação, edição e exclusão de tarefas de forma dinâmica.
+          </p>
+          <p class="tech">Tecnologias: HTML, CSS, JavaScript</p>
+          <div class="project-links">
+            <a href="https://github.com/rannyzz/Taskflow" target="_blank">Ver projeto</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Landing Page Teste</h3>
+          <p>
+            Projeto desenvolvido para testar deploy e hospedagem de uma aplicação web,
+            incluindo sistema de login e validação de funcionamento em ambiente real.
+          </p>
+          <p class="tech">Tecnologias: HTML, CSS, JavaScript</p>
+          <div class="project-links">
+            <a href="https://teste-hospedagem-265b3.web.app/index.html" target="_blank">Ver projeto</a>
+          </div>
+        </div>
+      </div>
     </section>
-    <section>
-        <h2>Contato</h2>
-            <ul>
-                <li>Email: igormorato137@gmail.com</li>
-                <li>Instagram: @morathzz</li>
-                <li>GitHub: rannyzz</li>
-                <li>WhatsApp: (13)99609-7100</li>
-            </ul>
+
+    <section id="contato">
+      <h2 class="section-title">Contato</h2>
+
+      <div class="contact-box">
+        <div class="contact-item">
+          <h3>Gmail</h3>
+          <a href="mailto:igormorato137@gmail.com">igormorato137@gmail.com</a>
+        </div>
+
+        <div class="contact-item">
+          <h3>GitHub</h3>
+          <a href="https://github.com/rannyzz" target="_blank">github.com/rannyzz</a>
+        </div>
+
+        <div class="contact-item">
+          <h3>Instagram</h3>
+          <a href="https://instagram.com/igurin__" target="_blank">@igurin__</a>
+        </div>
+      </div>
     </section>
-     <footer>
-        © 2026 — Portfólio pessoal
-    </footer>
+  </main>
+
+  <footer>
+    © 2026 Igor Morato. Todos os direitos reservados.
+  </footer>
+
 </body>
-
 </html>
-
